@@ -1,11 +1,34 @@
 import Head from "next/head";
 import Link from "next/link";
-import { Box, Text, Spacer, Avatar, Grid, Flex } from "@chakra-ui/react";
+import {
+  Box,
+  Text,
+  Spacer,
+  Avatar,
+  Grid,
+  Flex,
+  InputGroup,
+  Icon,
+  Input,
+  Wrap,
+  WrapItem,
+  Tag,
+  InputRightElement,
+  GridItem,
+  Image,
+  VStack,
+  HStack,
+  Select,
+  Textarea,
+  Button,
+  Heading,
+} from "@chakra-ui/react";
 import {
   CalendarIcon,
   PhoneIcon,
   BellIcon,
   AtSignIcon,
+  Search2Icon,
 } from "@chakra-ui/icons";
 import { api } from "~/utils/api";
 import styles from "./index.module.css";
@@ -119,16 +142,247 @@ export default function Home() {
           </Box>
         </Box>
         <Flex height="calc(100vh - 100px)" p={4} w="calc(100% - 2rem)" gap={6}>
-          {/* Left Side - 40% width */}
-          <Flex direction="column" width="40%" height="100%" pr={2} >
-            {/* Top box - 50% height */}
-            <Box bg="grey.200" borderRadius="md" mb={2} flex="1" m={4}>
-              {/* Content goes here */}
+          <Flex direction="column" width="40%" height="100%" pr={2}>
+            <Box
+              bg="gray.50"
+              borderRadius="md"
+              mb={2}
+              flex="1"
+              m={4}
+              textAlign="center"
+            >
+              <Box
+                as="span"
+                color="black"
+                fontWeight="bold"
+                fontSize="xx-large"
+              >
+                Trending Topics
+              </Box>
+
+              <Box w="full" p={4}>
+                <InputGroup>
+                  <InputRightElement pointerEvents="none">
+                    <Icon as={Search2Icon} color="gray.500" />
+                  </InputRightElement>
+                  <Input type="text" placeholder="Search for trends" />
+                </InputGroup>
+              </Box>
+
+              <Wrap spacing="3" justify="center">
+                <WrapItem>
+                  <Tag
+                    borderRadius="full"
+                    variant="solid"
+                    colorScheme="purple"
+                    px="3"
+                    py="1"
+                    fontSize="large"
+                  >
+                    #FitnessGearForSpring
+                  </Tag>
+                </WrapItem>
+                <WrapItem>
+                  <Tag
+                    borderRadius="full"
+                    variant="solid"
+                    colorScheme="purple"
+                    px="3"
+                    py="1"
+                    fontSize="large"
+                  >
+                    #OOTD
+                  </Tag>
+                </WrapItem>
+                {/* ... more tags */}
+                <WrapItem>
+                  <Tag
+                    borderRadius="full"
+                    variant="solid"
+                    colorScheme="purple"
+                    px="3"
+                    py="1"
+                    fontSize="large"
+                  >
+                    #BaroquePeral
+                  </Tag>
+                </WrapItem>
+                <WrapItem>
+                  <Tag
+                    borderRadius="full"
+                    variant="solid"
+                    colorScheme="purple"
+                    px="3"
+                    py="1"
+                    fontSize="large"
+                  >
+                    #YK2
+                  </Tag>
+                </WrapItem>
+                <WrapItem>
+                  <Tag
+                    borderRadius="full"
+                    variant="solid"
+                    colorScheme="purple"
+                    px="3"
+                    py="1"
+                    fontSize="large"
+                  >
+                    #90's
+                  </Tag>
+                </WrapItem>
+                <WrapItem>
+                  <Tag
+                    borderRadius="full"
+                    variant="solid"
+                    colorScheme="purple"
+                    px="3"
+                    py="1"
+                    fontSize="large"
+                  >
+                    #KoreanStyle
+                  </Tag>
+                </WrapItem>
+                <WrapItem>
+                  <Tag
+                    borderRadius="full"
+                    variant="solid"
+                    colorScheme="purple"
+                    px="3"
+                    py="1"
+                    fontSize="large"
+                  >
+                    #NCT
+                  </Tag>
+                </WrapItem>
+                <WrapItem>
+                  <Tag
+                    borderRadius="full"
+                    variant="solid"
+                    colorScheme="purple"
+                    px="3"
+                    py="1"
+                    fontSize="large"
+                  >
+                    #GOT7
+                  </Tag>
+                </WrapItem>
+                <WrapItem>
+                  <Tag
+                    borderRadius="full"
+                    variant="solid"
+                    colorScheme="purple"
+                    px="3"
+                    py="1"
+                    fontSize="large"
+                  >
+                    #MeanGirl
+                  </Tag>
+                </WrapItem>
+                <WrapItem>
+                  <Tag
+                    borderRadius="full"
+                    variant="solid"
+                    colorScheme="purple"
+                    px="3"
+                    py="1"
+                    fontSize="large"
+                  >
+                    #TaylorSwiftConcert
+                  </Tag>
+                </WrapItem>
+                <WrapItem>
+                  <Tag
+                    borderRadius="full"
+                    variant="solid"
+                    colorScheme="purple"
+                    px="3"
+                    py="1"
+                    fontSize="large"
+                  >
+                    #BaroquePeral
+                  </Tag>
+                </WrapItem>
+
+                {/* ... repeat for each hashtag */}
+              </Wrap>
             </Box>
 
             {/* Bottom box - 50% height */}
-            <Box bg="grey.300" borderRadius="md" flex="1" m={4}>
-              {/* Content goes here */}
+            <Box
+              bg="gray.50"
+              borderRadius="md"
+              flex="1"
+              m={4}
+              textAlign="center"
+            >
+              <Box
+                as="span"
+                color="black"
+                fontWeight="bold"
+                fontSize="xx-large"
+              >
+                Discover Topics
+              </Box>
+
+              <Box w="full" p={4}>
+                <InputGroup>
+                  <InputRightElement pointerEvents="none">
+                    <Icon as={Search2Icon} color="gray.500" />
+                  </InputRightElement>
+                  <Input type="text" placeholder="Search for trends" />
+                </InputGroup>
+              </Box>
+
+              <Box>
+                <Grid templateColumns="repeat(4, 1fr)" gap={2}>
+                  <GridItem colSpan={2} rowSpan={2}>
+                    <Image
+                      src="/cute_image1.jpeg"
+                      alt="Image 1"
+                      objectFit="cover"
+                      width="100%"
+                      height="100%"
+                    />
+                  </GridItem>
+                  <GridItem colSpan={1}>
+                    <Image
+                      src="/cute_image2.jpeg"
+                      alt="Image 2"
+                      objectFit="cover"
+                      width="100%"
+                      height="100%"
+                    />
+                  </GridItem>
+                  <GridItem colSpan={1} rowSpan={2}>
+                    <Image
+                      src="/cute_image3.jpeg"
+                      alt="Image 3"
+                      objectFit="cover"
+                      width="100%"
+                      height="100%"
+                    />
+                  </GridItem>
+                  <GridItem colSpan={1}>
+                    <Image
+                      src="/cute_image4.jpeg"
+                      alt="Image 4"
+                      objectFit="cover"
+                      width="100%"
+                      height="100%"
+                    />
+                  </GridItem>
+                  {/* <GridItem colSpan={2}>
+                    <Image
+                      src="/cute_image5.webp"
+                      alt="Image 5"
+                      objectFit="cover"
+                      width="100%"
+                      height="100%"
+                    />
+                  </GridItem> */}
+                </Grid>
+              </Box>
             </Box>
           </Flex>
 
@@ -137,11 +391,57 @@ export default function Home() {
             width="60%"
             height="100%"
             pl={2}
-            bg="grey.100"
+            bg="gray.50"
             borderRadius="md"
             m={4}
+            textAlign="center"
           >
-            {/* Content goes here */}
+            <Box as="span" color="black" fontWeight="bold" fontSize="xx-large">
+              Generate Project
+            </Box>
+
+            <VStack spacing={4} p={4}>
+              <Heading size="md" alignSelf="flex-start">
+                For Post
+              </Heading>
+
+              <HStack width="full" spacing={4}>
+                <Select placeholder="Pick platform" w="full">
+                  {/* Option values go here */}
+                </Select>
+                <Select placeholder="Pick a tone" w="full">
+                  {/* Option values go here */}
+                </Select>
+              </HStack>
+
+              <Textarea
+                placeholder="Describe your project"
+                size="sm"
+                resize="vertical"
+              />
+
+              <Button colorScheme="blue" size="md" alignSelf="center">
+                Generate my post
+              </Button>
+            </VStack>
+
+            <VStack spacing={4} p={4}>
+              <Heading size="md" alignSelf="flex-start">
+                For Idea
+              </Heading>
+
+              
+
+              <Textarea
+                placeholder="Describe a design style, pick a keyword or both"
+                size="sm"
+                resize="vertical"
+              />
+
+              <Button colorScheme="blue" size="md" alignSelf="center">
+                Generate my post
+              </Button>
+            </VStack>
           </Box>
         </Flex>
       </Box>
