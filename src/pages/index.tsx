@@ -1,4 +1,5 @@
 import Head from "next/head";
+import React, { useState } from "react";
 import Link from "next/link";
 import {
   Box,
@@ -32,9 +33,24 @@ import {
 } from "@chakra-ui/icons";
 import { api } from "~/utils/api";
 import styles from "./index.module.css";
+import { set } from "firebase/database";
 
 export default function Home() {
   // const hello = api.post.hello.useQuery({ text: "from tRPC" });
+    const [textAreaValue, setTextAreaValue] = useState("");
+    const [ideaAreaValue, setIdeaAreaValue] = useState("");
+    // Function to handle the button click
+    const generatePost = () => {
+      // Set the textarea value to whatever you need, here's an example:
+      setTextAreaValue(`🎉😺 MEOW MAJOR SALE ALERT! 😺🎉
+      Up to 50% off your fave styles + use MEOWMAGIC for an extra 10% off! 🌈✨ Swipe to see our top picks or tap the link in bio to shop all. Hurry, ends Sunday at midnight! 🛍️💨
+      `);
+    };
+
+    const generateIdea = () => {
+      setIdeaAreaValue(`From dream to reality 🌟 Swipe to follow the journey of our latest collection, from initial sketches to the stunning final pieces. This is where magic happens! Which stage surprises you the most? Let us know below! ✨ #MeowBehindTheScenes #CraftingFashion`)
+    }
+
 
   return (
     <>
@@ -322,7 +338,7 @@ export default function Home() {
                 fontWeight="bold"
                 fontSize="xx-large"
               >
-                Discover Topics
+                Discover Posts
               </Box>
 
               <Box w="full" p={4}>
@@ -407,10 +423,13 @@ export default function Home() {
 
               <HStack width="full" spacing={4}>
                 <Select placeholder="Pick platform" w="full">
-                  {/* Option values go here */}
+                  <option>Tik Tok</option>
+                  <option>Instagram</option>
                 </Select>
                 <Select placeholder="Pick a tone" w="full">
-                  {/* Option values go here */}
+                  <option>Exciting</option>
+                  <option>Funny</option>
+                  <option>Neutral</option>
                 </Select>
               </HStack>
 
@@ -418,9 +437,11 @@ export default function Home() {
                 placeholder="Describe your project"
                 size="sm"
                 resize="vertical"
+                value={textAreaValue}
+                onChange={(e) => setTextAreaValue(e.target.value)}
               />
 
-              <Button colorScheme="blue" size="md" alignSelf="center">
+              <Button colorScheme="blue" size="md" alignSelf="center" onClick={generatePost}>
                 Generate my post
               </Button>
             </VStack>
@@ -430,16 +451,16 @@ export default function Home() {
                 For Idea
               </Heading>
 
-              
-
               <Textarea
                 placeholder="Describe a design style, pick a keyword or both"
                 size="sm"
                 resize="vertical"
+                value={ideaAreaValue}
+                onChange={(e) => setIdeaAreaValue(e.target.value)}
               />
 
-              <Button colorScheme="blue" size="md" alignSelf="center">
-                Generate my post
+              <Button colorScheme="blue" size="md" alignSelf="center" onClick={generateIdea}>
+                Generate my idea
               </Button>
             </VStack>
           </Box>
