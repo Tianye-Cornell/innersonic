@@ -1,6 +1,6 @@
 import Head from "next/head";
 import React, { useState } from "react";
-import Link from "next/link";
+// import Link from "next/link";
 import {
   Box,
   Text,
@@ -26,14 +26,12 @@ import {
 } from "@chakra-ui/react";
 import {
   CalendarIcon,
-  PhoneIcon,
   BellIcon,
-  AtSignIcon,
   Search2Icon,
 } from "@chakra-ui/icons";
-import { api } from "~/utils/api";
-import styles from "./index.module.css";
-import { set } from "firebase/database";
+// import { api } from "~/utils/api";
+// import styles from "./index.module.css";
+// import { set } from "firebase/database";
 
 export default function Home() {
   // const hello = api.post.hello.useQuery({ text: "from tRPC" });
