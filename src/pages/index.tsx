@@ -46,7 +46,12 @@ export default function Home() {
     };
 
     const generateIdea = () => {
-      setIdeaAreaValue(`From dream to reality 🌟 Swipe to follow the journey of our latest collection, from initial sketches to the stunning final pieces. This is where magic happens! Which stage surprises you the most? Let us know below! ✨ #MeowBehindTheScenes #CraftingFashion`)
+      setIdeaAreaValue(`Behind-the-Scenes Peek
+      Content Idea: Share a behind-the-scenes look at how your clothes are designed, from sketch to final product. This could be in the form of a short time-lapse video or a carousel post with images showing the different stages, including fabric selection, cutting, sewing, and the final touches.
+      
+      
+      Caption Suggestion: "From dream to reality 🌟 Swipe to follow the journey of our latest collection, from initial sketches to the stunning final pieces. This is where magic happens! Which stage surprises you the most? Let us know below! ✨ #MeowBehindTheScenes #CraftingFashion"
+      `)
     }
 
 
